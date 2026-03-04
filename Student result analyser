@@ -1,0 +1,63 @@
+#input
+stud_name=input("Enter your Name :")
+marks=(input("Enter your mark(seperated by space):"))
+
+#string to list
+marks_list=marks.split()
+
+#string to int
+marks=[int(m) for m in marks_list]
+
+#total
+total=sum(marks)
+
+#average
+avg=total/len(marks)
+
+#highest mark
+highest_mark=max(marks)
+
+#lowest mark
+lowest_mark=min(marks)
+
+#grade system
+
+if avg >=90:
+    print("Grade A")
+elif avg>=75:
+    print("Grade B")
+elif avg>=50:
+    print("Grade C")
+else:
+    print("Fail")
+     
+#frequency
+freq={}
+for i in marks:
+     if i in freq:
+         freq[i]+=1
+     else:
+         freq[i]=1
+
+#unique marks
+unique_marks=set(marks)
+
+#grade calculate function
+def calculate_grade(avg):
+    if avg>=90:
+        print("Grade A")
+    elif avg>=75:
+        print("Grade B")
+    elif avg>=50:
+        print("Grade C")
+    else:
+        print("Fail")
+        
+#outputs
+print("Student's Name :",stud_name)
+print("Total :",total)
+print("Average:",avg)
+print("Highest mark: ",highest_mark)
+print("Lowest mark: ",lowest_mark)
+print("Frequency :",freq)
+print("Unique marks:",unique_marks)
