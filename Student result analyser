@@ -34,13 +34,13 @@ unique_marks=set(marks)
 #grade calculate function
 def calculate_grade(avg):
     if avg>=90:
-        print("Grade A")
+        return "Grade A"
     elif avg>=75:
-        print("Grade B")
+        return "Grade B"
     elif avg>=50:
-        print("Grade C")
+        return "Grade C"
     else:
-        print("Fail")
+        return "Fail"
         
 #outputs
 print("Student's Name :",stud_name)
