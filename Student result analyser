@@ -19,17 +19,6 @@ highest_mark=max(marks)
 
 #lowest mark
 lowest_mark=min(marks)
-
-#grade system
-
-if avg >=90:
-    print("Grade A")
-elif avg>=75:
-    print("Grade B")
-elif avg>=50:
-    print("Grade C")
-else:
-    print("Fail")
      
 #frequency
 freq={}
@@ -61,3 +50,5 @@ print("Highest mark: ",highest_mark)
 print("Lowest mark: ",lowest_mark)
 print("Frequency :",freq)
 print("Unique marks:",unique_marks)
+print("Grade:",calculate_grade(avg))
+
