@@ -1,0 +1,9 @@
+#shop discount calculator
+bill_amt= int(input("Enter bill amount :"))
+
+if bill_amt > 5000:
+    discount= bill_amt*20/100
+    discounted_amt=bill_amt - discount
+    print("Final Bill:",discounted_amt)
+else:
+    print("Bill Amount :",bill_amt)
