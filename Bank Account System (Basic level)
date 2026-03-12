@@ -1,0 +1,38 @@
+#Bank account system
+
+class BankAcc:    
+    def __init__(self,name,balance,deposit,withdraw):
+        self.name=name
+        self.balance=balance
+        self.deposit=deposit
+        self.withdraw=withdraw
+        
+     #to display user's data
+     
+    def display(self):
+        print("User's name:",self.name)
+        print("User's balance:",self.balance)
+        print("User Deposited Amount:",self.deposit)
+        print("User Withdrawal Amount:",self.withdraw)
+        
+      #to calculate available balance after depositing and withdrawal
+      
+    def available_balance(self):
+        print("Available Balance:",(self.balance + self.deposit - self.withdraw))
+        
+        
+#users data  
+    
+name= input("Enter your Name:")
+balance=int(input("Enter your Balance:"))
+deposit = int(input("Enter the amount you want to deposit :"))
+withdraw = int(input("Enter the amount you want to withdraw :"))
+
+#creating object
+
+user1=BankAcc(name,balance,deposit,withdraw)
+
+#displaying user's data and available balance
+    
+BankAcc.display(user1)
+BankAcc.available_balance(user1)
