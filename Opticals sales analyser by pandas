@@ -1,0 +1,24 @@
+#importing necessary libraries
+import pandas as pd
+import openpyxl
+
+#reading excel file
+df=pd.read_excel("salesdata.xlsx")
+print(df)
+
+#dataset info
+print(df.info())
+
+#expensive products
+expensive = df[df["price"] > 2000]
+print("Expensive products\n",expensive[["brand","price"]])
+
+#cheap products
+cheap = df[df["price"] < 1000]
+print("Cheap products\n",cheap[["brand","price"]])
+
+#average price
+print("Average price :",df["price"].mean())
+
+#products per brand
+print("Products per brand :",df["brand"].value_counts())
