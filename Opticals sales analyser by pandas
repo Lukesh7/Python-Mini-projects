@@ -21,4 +21,8 @@ print("Cheap products\n",cheap[["brand","price"]])
 print("Average price :",df["price"].mean())
 
 #products per brand
-print("Products per brand :",df["brand"].value_counts())
+print("Products per brand\n",df["brand"].value_counts())
+
+#products per type
+print("Products per type\n",df["type"].value_counts())
+
