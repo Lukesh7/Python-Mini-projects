@@ -1,0 +1,64 @@
+#smart string analyzer
+
+s = input("Enter a sentence :")
+
+#length of characters 
+
+print("Number of characters :",len(s))
+
+#to reverse the string
+
+def reversestr(s):
+    rev =""
+    for ch in reversed(str(s)):
+        rev = rev + ch
+    return rev
+
+res = reversestr(s)
+print(r"Reversed string :",res)
+
+#to check the string is palindrome
+
+def checkpalindrome(s):
+    if s == reversed(s):
+        print("YES ! its a palindrome")
+    else :
+        print(f"NOPE ! {s} is not a palindrome")
+        
+checkpalindrome(s)
+
+#to count vowels in the sentence
+
+def countvowels(s):
+    vowels="aeiou"
+    count = 0
+    for ch in s:
+        if ch.lower() in vowels:
+            count +=1
+    return count
+vow = countvowels(s)
+print("The count of vowels :", vow)
+
+#to count consonants in the sentence
+
+def countconsonant(s):
+    vowels = "aeiou"
+    count = 0
+    for ch in s:
+        if ch.isalpha():
+            if ch.lower() not in vowels:
+                count +=1
+    return count
+cons = countconsonant(s)
+print("The count of consonants :",cons)
+
+#to count digits
+
+def countdigit(s):
+    count = 0
+    for ch in s:
+        if ch.isdigit():
+            count +=1
+    return count
+dig = countdigit(s)
+print("The count of digits :",dig)
