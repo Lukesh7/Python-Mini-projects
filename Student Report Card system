@@ -1,0 +1,114 @@
+#Student report card system
+
+students = []  #to store data
+
+#Takes input (multiple students)
+
+while True :
+    
+    #student names
+    name = input("Enter Name (q to quit):").strip()
+    if name.lower() == 'q':  #to exit loop
+        break
+        
+     #marks   
+    marks_input = input("Enter marks (space seperated) :")
+    
+    #to validate marks
+    parts= marks_input.split()
+    valid = True
+    
+    for p in parts:
+        if not p.isdigit():
+            valid = False
+            break
+    if not valid:
+      print("Invalid ! Enter Numbers only")
+      continue
+    
+    #to take only 5 subjects marks
+    if len(parts) !=5:
+            print("Enter only 5 subjects marks ")
+            continue
+            
+    #to map 
+    marks = list( map(int,parts) )       
+    
+    #storing data
+    students.append ({"name" : name ,"marks" : marks})
+    
+print(students)
+
+#to calculate total & average
+
+def calculate(students):
+    for student in students:
+        name = student["name"]
+        marks = student["marks"]
+        
+        tot = sum(marks)
+        avg = tot / len(marks)
+        
+        #grade system
+        if avg >=90:
+            grade = "A"
+        elif avg >= 75:
+            grade = "B"
+        elif avg >= 50:
+            grade = "C"
+        else:
+            grade = "Fail"
+           
+        print(f"Name : {name}, \nMarks : {marks}, \nTotal Marks : {tot}, \nAverage marks : {avg}, \nGrade : {grade}")
+        
+calculate(students)
+
+#to display topper of the class
+def displayTop(students):
+    topper = ""
+    highest_tot = 0
+    
+    for student in students:
+        name = student["name"] 
+        marks = student["marks"]
+        total = sum(marks)
+        
+        if total > highest_tot:
+            highest_tot = total
+            topper = name
+            
+    print(f"Topper : {topper}, Total marks = {highest_tot}")
+       
+displayTop(students)
+
+#to display lowest mark student
+
+def displayLow(students):
+    lowest_stud = ""
+    lowest_mark = float('inf')
+    
+    for student in students:
+        name = student["name"]
+        marks = student["marks"]
+        total = sum(marks)
+        
+        
+        if total < lowest_mark:
+            lowest_stud = name
+            lowest_mark = total
+                
+    print(f"Lowest Student : {lowest_stud}, Total marks = {lowest_mark}")
+    
+displayLow(students)
+
+#average of the class
+def avgclass(students):
+    all_marks = []
+    
+    for student in students:
+        all_marks.extend(student["marks"])
+       
+
+    print("Average marks of whole class :",sum(all_marks) / len(all_marks))
+
+avgclass(students)
