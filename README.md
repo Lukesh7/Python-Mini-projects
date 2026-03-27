@@ -1,10 +1,6 @@
 🧠 Python Mini Projects Collection
 
-"Python" (https://img.shields.io/badge/Python-3.x-blue?logo=python)
-"Status" (https://img.shields.io/badge/Status-Active-brightgreen)
-"Projects" (https://img.shields.io/badge/Projects-Multiple-orange)
-"License" (https://img.shields.io/badge/License-MIT-lightgrey)
-
+![Python](...) ![Status](...) ![Projects](...) ![License](...)
 ---
 
 📌 Overview
