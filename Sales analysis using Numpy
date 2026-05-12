@@ -1,0 +1,76 @@
+#Sales analysis using Numpy
+import numpy as np
+
+#data set
+sales = np.array([
+    [200,450,320], #day 1
+    [560,280,140], #day 2
+    [440,670,620] #day 3
+])
+    #p1, p2, p3
+print(sales)
+
+#total sales
+total_sales = np.array(sales).sum()
+print("Total Sales :", total_sales) #3680
+
+#total sales per day
+row1_total = np.array(sales[0]).sum()
+print("Row 1 total:", row1_total) #970
+
+row2_total = np.array(sales[1]).sum()
+print("Row 2 total:", row2_total) #980
+
+row3_total = np.array(sales[2]).sum()
+print("Row 3 total:", row3_total) #1730
+
+#total sales per product
+col1_total = sales[:,0].sum()
+print("Column 1 total:", col1_total) #1200
+
+col2_total = sales[:,1].sum()
+print("Column 2 total:", col2_total) #1400
+
+col3_total = sales[:,2].sum()
+print("Column 3 total:", col3_total) #1080
+
+#average sales - 0verall
+avg_sales = np.mean(sales)
+print("Average sales :", avg_sales) #408.8888888888889
+
+#average sales - per product
+avg_sales_pr = np.mean(sales, axis = 0)
+print("Average Sales per product :", avg_sales_pr) #[400. 466.66666667 360.]
+
+#highest and lowest sales
+highest_sales = np.max(sales)
+print("Highest Sales:", highest_sales) #670
+
+lowest_sales = np.min(sales)
+print("Lowest Sales:", lowest_sales) #140
+
+#Boolean masking
+#to find sales greater than 400
+
+print("Sales greater than 400 :",sales[sales > 400]) #[450 560 440 670 620]
+
+#Increase sales by 10%
+updated_sales = sales * 1.10
+print("Updated sales :", updated_sales)
+#[[220. 495. 352.]
+#[616. 308. 154.]
+#[484. 737. 682.]]
+
+#to find best selling product
+
+product_totals = np.sum(sales, axis=0)
+print("Product totals:",product_totals) # [1200 1400 1080]
+print("Index of most selling product:", np.argmax(product_totals)) #1 so p2
+
+#find best sales day
+daily_totals = np.sum(sales, axis = 1)
+print("Daily totals:", daily_totals) #[ 970  980 1730]
+print("Idx of Best sales day:", np.argmax(daily_totals)) #2 so day3
+
+#to find std of sales
+print("Standard deviation of sales :", np.std(sales)) #175.96997499222823
